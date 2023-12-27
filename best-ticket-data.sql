@@ -1035,3 +1035,14 @@ JOIN
 ORDER BY
     RAND()
 LIMIT 1000;
+
+
+
+INSERT INTO tickets (ticket_type_id)
+SELECT
+     t.id AS ticket_type_id
+FROM
+    ticket_types t
+ORDER BY
+    RAND()
+LIMIT 1000;
