@@ -150,11 +150,6 @@ ALTER TABLE organizer
 ADD COLUMN user_id binary(36),
  ADD CONSTRAINT user_id FOREIGN KEY (user_id) REFERENCES users (id);
 
-ALTER TABLE organizer
-    DROP COLUMN user_id;
-
-ALTER TABLE organizer
-    ADD CONSTRAINT user_id FOREIGN KEY (user_id) REFERENCES users (id);
 
 RENAME TABLE customer TO customers;
 
@@ -171,7 +166,9 @@ ALTER TABLE users
 DROP FOREIGN KEY role_id,
     DROP COLUMN role_id;
 
-
+ALTER TABLE organizers
+CHANGE COLUMN full_name enterprise_name VARCHAR(50),
+CHANGE COLUMN id_card tax_code VARCHAR(50);
 
 
 
