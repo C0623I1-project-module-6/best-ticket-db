@@ -1,5 +1,6 @@
 #
 # drop database best_ticket;
+
 create database best_ticket;
 use best_ticket;
 
